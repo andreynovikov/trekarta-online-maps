@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Chartbundle US AeroNav Online Charts for Androzic</string>
+    <string name="cbsec_name">Sectional Charts</string>
+    <string name="cbsec_uri" translatable="false"><![CDATA[content://com.androzic.map.online.provider.chartbundle/sec]]></string>
+    <string name="cbtac_name">Terminal Area Charts</string>
+    <string name="cbtac_uri" translatable="false"><![CDATA[content://com.androzic.map.online.provider.chartbundle/tac]]></string>
+    <string name="cbwac_name">World Aeronautical Charts</string>
+    <string name="cbwac_uri" translatable="false"><![CDATA[content://com.androzic.map.online.provider.chartbundle/wac]]></string>
+    <string name="cbenrl_name">Enroute Low Charts</string>
+    <string name="cbenrl_uri" translatable="false"><![CDATA[content://com.androzic.map.online.provider.chartbundle/enrl]]></string>
+    <string name="cbenrh_name">Enroute High Charts</string>
+    <string name="cbenrh_uri" translatable="false"><![CDATA[content://com.androzic.map.online.provider.chartbundle/enrh]]></string>
+    <string name="cbenra_name">Area Charts</string>
+    <string name="cbenra_uri" translatable="false"><![CDATA[content://com.androzic.map.online.provider.chartbundle/enra]]></string>
+</resources>
