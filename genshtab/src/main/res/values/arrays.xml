@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="maps" translatable="false">
+        <item>genshtab250m</item>
+        <item>genshtab500m</item>
+        <item>genshtab1km</item>
+        <item>genshtab2km</item>
+        <item>genshtab5km</item>
+        <item>genshtab10km</item>
+    </string-array>
+</resources>

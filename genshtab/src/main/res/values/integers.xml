@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="genshtab250m_threads">1</integer>
+    <integer name="genshtab250m_minzoom">2</integer>
+    <integer name="genshtab250m_maxzoom">15</integer>
+    <integer name="genshtab500m_threads">1</integer>
+    <integer name="genshtab500m_minzoom">2</integer>
+    <integer name="genshtab500m_maxzoom">14</integer>
+    <integer name="genshtab1km_threads">1</integer>
+    <integer name="genshtab1km_minzoom">2</integer>
+    <integer name="genshtab1km_maxzoom">13</integer>
+    <integer name="genshtab2km_threads">1</integer>
+    <integer name="genshtab2km_minzoom">2</integer>
+    <integer name="genshtab2km_maxzoom">12</integer>
+    <integer name="genshtab5km_threads">1</integer>
+    <integer name="genshtab5km_minzoom">2</integer>
+    <integer name="genshtab5km_maxzoom">11</integer>
+    <integer name="genshtab10km_threads">1</integer>
+    <integer name="genshtab10km_minzoom">2</integer>
+    <integer name="genshtab10km_maxzoom">10</integer>
+</resources>
