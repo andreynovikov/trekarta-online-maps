@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="maps" translatable="false">
+        <item>thunderforestcycle</item>
+        <item>thunderforestlandscape</item>
+        <item>thunderforesttransport</item>
+        <item>thunderforestoutdoors</item>
+    </string-array>
+</resources>

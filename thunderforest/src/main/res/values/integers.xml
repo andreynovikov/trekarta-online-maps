@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="thunderforestcycle_minzoom">0</integer>
+    <integer name="thunderforestcycle_maxzoom">18</integer>
+    <integer name="thunderforestlandscape_minzoom">0</integer>
+    <integer name="thunderforestlandscape_maxzoom">18</integer>
+    <integer name="thunderforesttransport_minzoom">0</integer>
+    <integer name="thunderforesttransport_maxzoom">18</integer>
+    <integer name="thunderforestoutdoors_minzoom">0</integer>
+    <integer name="thunderforestoutdoors_maxzoom">18</integer>
+</resources>

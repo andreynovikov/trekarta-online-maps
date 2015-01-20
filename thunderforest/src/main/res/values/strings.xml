@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Thunderforest Online Maps for Androzic</string>
+    <string name="thunderforestcycle_name">Thunderforest OpenCycleMap</string>
+    <string name="thunderforestcycle_uri" translatable="false"><![CDATA[content://com.androzic.map.online.provider.thunderforest/cycle]]></string>
+    <string name="thunderforestcycle_license">Maps &#169; Thunderforest, Data &#169; OpenStreetMap contributors</string>
+    <string name="thunderforestcycle_link" translatable="false"><![CDATA[http://www.thunderforest.com/terms/]]></string>
+    <string name="thunderforestlandscape_name">Thunderforest Lanscape</string>
+    <string name="thunderforestlandscape_uri" translatable="false"><![CDATA[content://com.androzic.map.online.provider.thunderforest/landscape]]></string>
+    <string name="thunderforestlandscape_license">Maps &#169; Thunderforest, Data &#169; OpenStreetMap contributors</string>
+    <string name="thunderforestlandscape_link" translatable="false"><![CDATA[http://www.thunderforest.com/terms/]]></string>
+    <string name="thunderforesttransport_name">Thunderforest Transport</string>
+    <string name="thunderforesttransport_uri" translatable="false"><![CDATA[content://com.androzic.map.online.provider.thunderforest/transport]]></string>
+    <string name="thunderforesttransport_license">Maps &#169; Thunderforest, Data &#169; OpenStreetMap contributors</string>
+    <string name="thunderforesttransport_link" translatable="false"><![CDATA[http://www.thunderforest.com/terms/]]></string>
+    <string name="thunderforestoutdoors_name">Thunderforest Outdoors</string>
+    <string name="thunderforestoutdoors_uri" translatable="false"><![CDATA[content://com.androzic.map.online.provider.thunderforest/outdoors]]></string>
+    <string name="thunderforestoutdoors_license">Maps &#169; Thunderforest, Data &#169; OpenStreetMap contributors</string>
+    <string name="thunderforestoutdoors_link" translatable="false"><![CDATA[http://www.thunderforest.com/terms/]]></string>
+</resources>
