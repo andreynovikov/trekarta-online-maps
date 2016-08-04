@@ -4,11 +4,11 @@
 
     <application
         android:allowBackup="false"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name">
         <receiver android:name=".Executor">
             <intent-filter>
-                <action android:name="com.androzic.map.online.provider.action.INITIALIZE" />
+                <action android:name="mobi.maptrek.maps.online.provider.action.INITIALIZE" />
             </intent-filter>
         </receiver>
         <provider

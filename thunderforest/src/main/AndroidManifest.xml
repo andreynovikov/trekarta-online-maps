@@ -5,7 +5,7 @@
 
     <application
         android:allowBackup="false"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         tools:ignore="GoogleAppIndexingWarning">
         <receiver android:name=".Executor"
@@ -16,7 +16,7 @@
         </receiver>
         <provider
             android:name=".ThunderforestOnlineMapProvider"
-            android:authorities="com.androzic.map.online.provider.thunderforest"
+            android:authorities="mobi.maptrek.maps.online.provider.thunderforest"
             android:exported="true"
             tools:ignore="ExportedContentProvider" />
 
