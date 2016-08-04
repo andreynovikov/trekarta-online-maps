@@ -1,2 +1,2 @@
-# androzic-online-maps
-Online map providers for Androzic
+# MapTrek Online Maps
+Online map providers for MapTrek
