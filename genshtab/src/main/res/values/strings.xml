@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Genshtab Online Maps for Androzic</string>
+    <string name="app_name">Genshtab Online Maps for MapTrek</string>
     <string name="genshtab250m_name">Genshtab 250 m</string>
-    <string name="genshtab250m_uri" translatable="false"><![CDATA[content://com.androzic.map.online.provider.genshtab/genshtab250m]]></string>
+    <string name="genshtab250m_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.genshtab/genshtab250m]]></string>
     <string name="genshtab500m_name">Genshtab 500 m</string>
-    <string name="genshtab500m_uri" translatable="false"><![CDATA[content://com.androzic.map.online.provider.genshtab/genshtab500m]]></string>
+    <string name="genshtab500m_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.genshtab/genshtab500m]]></string>
     <string name="genshtab1km_name">Genshtab 1 km</string>
-    <string name="genshtab1km_uri" translatable="false"><![CDATA[content://com.androzic.map.online.provider.genshtab/genshtab1km]]></string>
+    <string name="genshtab1km_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.genshtab/genshtab1km]]></string>
     <string name="genshtab2km_name">Genshtab 2 km</string>
-    <string name="genshtab2km_uri" translatable="false"><![CDATA[content://com.androzic.map.online.provider.genshtab/genshtab2km]]></string>
+    <string name="genshtab2km_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.genshtab/genshtab2km]]></string>
     <string name="genshtab5km_name">Genshtab 5 km</string>
-    <string name="genshtab5km_uri" translatable="false"><![CDATA[content://com.androzic.map.online.provider.genshtab/genshtab5km]]></string>
+    <string name="genshtab5km_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.genshtab/genshtab5km]]></string>
     <string name="genshtab10km_name">Genshtab 10 km</string>
-    <string name="genshtab10km_uri" translatable="false"><![CDATA[content://com.androzic.map.online.provider.genshtab/genshtab10km]]></string>
+    <string name="genshtab10km_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.genshtab/genshtab10km]]></string>
 </resources>

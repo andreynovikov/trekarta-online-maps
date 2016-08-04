@@ -18,22 +18,23 @@
  * along with Androzic.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.androzic.map.online.provider.thunderforest;
+package mobi.maptrek.maps.online.provider.thunderforest;
 
+import android.annotation.SuppressLint;
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.net.Uri;
-
-import com.androzic.map.online.TileProvider;
+import android.support.annotation.NonNull;
 
 import java.util.List;
 
 public class ThunderforestOnlineMapProvider extends ContentProvider
 {
-	public static final String AUTHORITY = "com.androzic.map.online.provider.thunderforest";
+	public static final String AUTHORITY = "mobi.maptrek.maps.online.provider.thunderforest";
+	public static final String TILE_TYPE = "vnd.android.cursor.item/vnd.mobi.maptrek.maps.online.provider.tile";
 
 	private UriMatcher uriMatcher;
 	private String[] servers = {"a", "b", "c"};
@@ -48,16 +49,16 @@ public class ThunderforestOnlineMapProvider extends ContentProvider
 	}
 
 	@Override
-	public String getType(Uri uri)
+	public String getType(@NonNull Uri uri)
 	{
 		if (uriMatcher.match(uri) < 0)
 			throw new IllegalArgumentException("Unknown URI " + uri);
 
-		return TileProvider.TILE_TYPE;
+		return TILE_TYPE;
 	}
 
 	@Override
-	public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)
+	public Cursor query(@NonNull Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)
 	{
 		if (uriMatcher.match(uri) < 0)
 			throw new IllegalArgumentException("Unknown URI " + uri);
@@ -71,6 +72,7 @@ public class ThunderforestOnlineMapProvider extends ContentProvider
 		MatrixCursor cursor = new MatrixCursor(projection);
 		MatrixCursor.RowBuilder row = cursor.newRow();
 
+		@SuppressLint("DefaultLocale")
 		String url = String.format("http://%s.tile.thunderforest.com/%s/%d/%d/%d.png", servers[nextServer], path, z, x, y);
 		row.add(url);
 
@@ -82,19 +84,19 @@ public class ThunderforestOnlineMapProvider extends ContentProvider
 	}
 
 	@Override
-	public Uri insert(Uri uri, ContentValues values)
+	public Uri insert(@NonNull Uri uri, ContentValues values)
 	{
 		throw new UnsupportedOperationException("Tile URIs can not be inserted");
 	}
 
 	@Override
-	public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs)
+	public int update(@NonNull Uri uri, ContentValues values, String selection, String[] selectionArgs)
 	{
 		throw new UnsupportedOperationException("Tile URIs can not be updated");
 	}
 
 	@Override
-	public int delete(Uri uri, String selection, String[] selectionArgs)
+	public int delete(@NonNull Uri uri, String selection, String[] selectionArgs)
 	{
 		throw new UnsupportedOperationException("Tile URIs can not be deleted");
 	}

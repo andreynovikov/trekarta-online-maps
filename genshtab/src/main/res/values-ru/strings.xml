@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Онлайн-карты Генштаба для Андрозика</string>
+    <string name="app_name">Онлайн-карты Генштаба для Путекарты</string>
     <string name="genshtab250m_name">Генштаб 250 м</string>
     <string name="genshtab500m_name">Генштаб 500 м</string>
     <string name="genshtab1km_name">Генштаб 1 км</string>

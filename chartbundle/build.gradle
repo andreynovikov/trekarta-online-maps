@@ -1,34 +1,25 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 23
+    buildToolsVersion "24.0.0"
 
     defaultConfig {
-        applicationId "com.androzic.map.online.provider.chartbundle"
-        minSdkVersion 8
-        targetSdkVersion 21
+        applicationId "mobi.maptrek.map.online.provider.chartbundle"
+        minSdkVersion 23
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
-
-    signingConfigs {
-        release {
-            storeFile file(RELEASE_STORE_FILE)
-            storePassword RELEASE_STORE_PASSWORD
-            keyAlias RELEASE_KEY_ALIAS
-            keyPassword RELEASE_KEY_PASSWORD
-        }
-    }
-
     buildTypes {
         release {
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
         }
     }
 }
 
 dependencies {
-    compile project(':library')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:support-annotations:23.4.0'
 }
