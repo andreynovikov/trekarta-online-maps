@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mapy.cz Online Maps for Trekarta</string>
+    <string name="base_name">Mapy.cz Base</string>
+    <string name="base_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.mapycz/base]]></string>
+    <string name="base_license" translatable="false"><![CDATA[<a href="https://api.mapy.cz/">Mapy.cz</a> &#169; Seznam.cz, a.s.]]></string>
+    <string name="turist_name">Mapy.cz Tourist</string>
+    <string name="turist_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.mapycz/turist]]></string>
+    <string name="turist_license" translatable="false"><![CDATA[<a href="https://api.mapy.cz/">Mapy.cz</a> &#169; Seznam.cz, a.s.]]></string>
+    <string name="ophoto_name">Mapy.cz Orthophoto</string>
+    <string name="ophoto_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.mapycz/ophoto]]></string>
+    <string name="ophoto_license" translatable="false"><![CDATA[<a href="https://api.mapy.cz/">Mapy.cz</a> &#169; Seznam.cz, a.s.]]></string>
+</resources>
