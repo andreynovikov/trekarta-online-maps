@@ -1,0 +1,24 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="mobi.maptrek.maps.online.provider.basemapat">
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        tools:ignore="GoogleAppIndexingWarning">
+        <receiver android:name=".Executor"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+                <action android:name="mobi.maptrek.maps.online.provider.action.INITIALIZE" />
+            </intent-filter>
+        </receiver>
+        <provider
+            android:name=".BasemapAtOnlineMapProvider"
+            android:authorities="mobi.maptrek.maps.online.provider.basemapat"
+            android:exported="true"
+            tools:ignore="ExportedContentProvider" />
+
+    </application>
+
+</manifest>

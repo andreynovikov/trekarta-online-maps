@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="geolandbasemap_minzoom">6</integer>
+    <integer name="geolandbasemap_maxzoom">20</integer>
+    <integer name="bmapgrau_minzoom">6</integer>
+    <integer name="bmapgrau_maxzoom">20</integer>
+    <integer name="bmaporthofoto_minzoom">6</integer>
+    <integer name="bmaporthofoto_maxzoom">20</integer>
+</resources>
