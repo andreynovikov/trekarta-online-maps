@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kapsi.fi Online Maps for Trekarta</string>
+    <string name="peruskartta_name">Kapsi.fi Peruskartta</string>
+    <string name="peruskartta_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.kapsifi/peruskartta]]></string>
+    <string name="peruskartta_license" translatable="false"><![CDATA[National Land Survey, CC-BY-4.0 via kartat.kapsi.fi]]></string>
+    <string name="taustakartta_name">Kapsi.fi Taustakartta</string>
+    <string name="taustakartta_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.kapsifi/taustakartta]]></string>
+    <string name="taustakartta_license" translatable="false"><![CDATA[National Land Survey, CC-BY-4.0 via kartat.kapsi.fi]]></string>
+    <string name="ortokuva_name">Kapsi.fi Ortoilmakuva</string>
+    <string name="ortokuva_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.kapsifi/ortokuva]]></string>
+    <string name="ortokuva_license" translatable="false"><![CDATA[National Land Survey, CC-BY-4.0 via kartat.kapsi.fi]]></string>
+</resources>

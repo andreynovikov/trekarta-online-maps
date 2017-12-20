@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="peruskartta_minzoom">0</integer>
+    <integer name="peruskartta_maxzoom">19</integer>
+    <integer name="taustakartta_minzoom">0</integer>
+    <integer name="taustakartta_maxzoom">19</integer>
+    <integer name="ortokuva_minzoom">0</integer>
+    <integer name="ortokuva_maxzoom">19</integer>
+</resources>
