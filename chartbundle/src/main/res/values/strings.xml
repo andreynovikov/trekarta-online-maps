@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Chartbundle US AeroNav Online Charts for MapTrek</string>
+    <string name="app_name">Chartbundle US AeroNav Online Charts for Trekarta</string>
     <string name="cbsec_name">Sectional Charts</string>
     <string name="cbsec_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.chartbundle/sec]]></string>
     <string name="cbtac_name">Terminal Area Charts</string>
