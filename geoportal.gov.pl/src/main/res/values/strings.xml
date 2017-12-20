@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Poland Orthophotomap for Trekarta</string>
+    <string name="ORTO_name">Poland Orthophotomap</string>
+    <string name="ORTO_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.geoportalgovpl/ORTO]]></string>
+    <string name="ORTO_license" translatable="false"><![CDATA[Copyright &#169; Główny Urząd Geodezji i Kartografii]]></string>
+</resources>

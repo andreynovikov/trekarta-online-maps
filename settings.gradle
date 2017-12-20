@@ -1,1 +1,1 @@
-include ':chartbundle', ':thunderforest', ':genshtab', ':basemap.at', ':mapy.cz', ':kapsi.fi'
+include ':chartbundle', ':thunderforest', ':genshtab', ':basemap.at', ':mapy.cz', ':kapsi.fi', ':geoportal.gov.pl'
