@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="world_minzoom">0</integer>
+    <integer name="world_maxzoom">5</integer>
+</resources>
