@@ -1,13 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="mobi.maptrek.maps.online.provider.geoportalgovpl">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         tools:ignore="GoogleAppIndexingWarning">
-        <receiver android:name=".Executor"
+        <receiver
+            android:name=".Executor"
+            android:exported="true"
             tools:ignore="ExportedReceiver">
             <intent-filter>
                 <action android:name="mobi.maptrek.maps.online.provider.action.INITIALIZE" />

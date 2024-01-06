@@ -1,13 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '26.0.2'
-
     defaultConfig {
         applicationId "mobi.maptrek.map.online.provider.chartbundle"
         minSdkVersion 23
-        targetSdkVersion 27
+        targetSdkVersion 34
+        compileSdk 34
         versionCode 1
         versionName "1.0"
     }
@@ -17,9 +15,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    namespace 'mobi.maptrek.maps.online.provider.chartbundle'
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:support-annotations:27.0.2'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'com.android.support:support-annotations:28.0.0'
 }
