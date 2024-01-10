@@ -1,21 +1,17 @@
 /*
- * Androzic - android navigation client that uses OziExplorer maps (ozf2, ozfx3).
- * Copyright (C) 2010-2015 Andrey Novikov <http://andreynovikov.info/>
+ * Copyright 2024 Andrey Novikov
  *
- * This file is part of Androzic application.
+ * This program is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU Lesser General Public License as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option) any later version.
  *
- * Androzic is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
-
- * Androzic is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
-
- * You should have received a copy of the GNU General Public License
- * along with Androzic.  If not, see <http://www.gnu.org/licenses/>.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+ * PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License along with
+ * this program. If not, see <http://www.gnu.org/licenses/>.
+ *
  */
 
 package mobi.maptrek.maps.online.provider.geoportalgovpl;
@@ -23,6 +19,7 @@ package mobi.maptrek.maps.online.provider.geoportalgovpl;
 import android.annotation.SuppressLint;
 import android.content.ContentProvider;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.MatrixCursor;
@@ -32,15 +29,16 @@ import android.support.annotation.NonNull;
 import java.util.List;
 
 public class GeoportalGovPlFiOnlineMapProvider extends ContentProvider {
-    public static final String AUTHORITY = "mobi.maptrek.maps.online.provider.geoportalgovpl";
-    public static final String TILE_TYPE = "vnd.android.cursor.item/vnd.mobi.maptrek.maps.online.provider.tile";
-
     private UriMatcher uriMatcher;
 
     @Override
     public boolean onCreate() {
+        Context context = getContext();
+        assert context != null;
+        String authority = context.getString(R.string.authority);
         uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-        uriMatcher.addURI(AUTHORITY, "*/#/#/#", 1);
+        uriMatcher.addURI(authority, "maps", 1);
+        uriMatcher.addURI(authority, "tiles/*/#/#/#", 2);
         return true;
     }
 
@@ -49,19 +47,58 @@ public class GeoportalGovPlFiOnlineMapProvider extends ContentProvider {
         if (uriMatcher.match(uri) < 0)
             throw new IllegalArgumentException("Unknown URI " + uri);
 
-        return TILE_TYPE;
+        return null;
     }
 
     @Override
     public Cursor query(@NonNull Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-        if (uriMatcher.match(uri) < 0)
+        int code = uriMatcher.match(uri);
+        if (code < 0)
             throw new IllegalArgumentException("Unknown URI " + uri);
 
+        switch (code) {
+            case 1:
+                return queryMaps(projection);
+            case 2:
+                return queryTiles(uri, projection);
+        }
+        return null;
+    }
+
+    @SuppressLint("DiscouragedApi")
+    private Cursor queryMaps(String[] projection) {
+        Context context = getContext();
+        assert context != null;
+        MatrixCursor cursor = new MatrixCursor(projection);
+        MatrixCursor.RowBuilder row = cursor.newRow();
+        for (String column : projection) {
+            switch (column) {
+                case "IDENTIFIER":
+                    row.add("ORTO");
+                    break;
+                case "NAME":
+                    row.add(context.getString(R.string.name));
+                    break;
+                case "LICENSE":
+                    row.add(context.getString(R.string.license));
+                    break;
+                case "MIN_ZOOM":
+                    row.add(4);
+                    break;
+                case "MAX_ZOOM":
+                    row.add(19);
+                    break;
+                }
+        }
+        return cursor;
+    }
+
+    private Cursor queryTiles(@NonNull Uri uri, String[] projection) {
         List<String> pathSegments = uri.getPathSegments();
-        String path = pathSegments.get(0);
-        int z = Integer.parseInt(pathSegments.get(1));
-        int x = Integer.parseInt(pathSegments.get(2));
-        int y = Integer.parseInt(pathSegments.get(3));
+        String mapId = pathSegments.get(1);
+        int z = Integer.parseInt(pathSegments.get(2));
+        int x = Integer.parseInt(pathSegments.get(3));
+        int y = Integer.parseInt(pathSegments.get(4));
 
         MatrixCursor cursor = new MatrixCursor(projection);
         MatrixCursor.RowBuilder row = cursor.newRow();
@@ -69,7 +106,7 @@ public class GeoportalGovPlFiOnlineMapProvider extends ContentProvider {
         BoundingBox bb = BoundingBox.tileToBoundingBox(z, x, y);
 
         @SuppressLint("DefaultLocale")
-        String url = String.format("http://mapy.geoportal.gov.pl/wss/service/img/guest/%s/MapServer/WMSServer?STYLES=default&SERVICE=WMS&FORMAT=image/jpeg&REQUEST=GetMap&HEIGHT=256&WIDTH=256&VERSION=1.1.1&BBOX=%f,%f,%f,%f&LAYERS=Raster&SRS=EPSG:4326&EXCEPTIONS=application/vnd.ogc.se_inimage&TRANSPARENT=false", path, bb.west, bb.south, bb.east, bb.north);
+        String url = String.format("http://mapy.geoportal.gov.pl/wss/service/img/guest/%s/MapServer/WMSServer?STYLES=default&SERVICE=WMS&FORMAT=image/jpeg&REQUEST=GetMap&HEIGHT=256&WIDTH=256&VERSION=1.1.1&BBOX=%f,%f,%f,%f&LAYERS=Raster&SRS=EPSG:4326&EXCEPTIONS=application/vnd.ogc.se_inimage&TRANSPARENT=false", mapId, bb.west, bb.south, bb.east, bb.north);
         row.add(url);
 
         return cursor;

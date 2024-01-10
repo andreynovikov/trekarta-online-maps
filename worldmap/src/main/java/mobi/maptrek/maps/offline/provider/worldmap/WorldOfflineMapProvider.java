@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Andrey Novikov
+ * Copyright 2024 Andrey Novikov
  *
  * This program is free software: you can redistribute it and/or modify it under the
  * terms of the GNU Lesser General Public License as published by the Free Software
@@ -18,7 +18,9 @@ package mobi.maptrek.maps.offline.provider.worldmap;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.UriMatcher;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -32,9 +34,6 @@ import java.util.List;
  * https://www.arcgis.com/home/item.html?id=7b650618563741ca9a5186c1aa69126e
  */
 public class WorldOfflineMapProvider extends ContentProvider {
-    public static final String AUTHORITY = "mobi.maptrek.maps.offline.provider.worldmap";
-    public static final String TILE_TYPE = "vnd.android.cursor.item/vnd.mobi.maptrek.maps.offline.provider.tile";
-
     private static final String SQL_GET_IMAGE = "SELECT tile_data FROM tiles WHERE tile_column = ? AND tile_row = ? AND zoom_level = ?";
 
     private UriMatcher uriMatcher;
@@ -42,9 +41,14 @@ public class WorldOfflineMapProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
+        Context context = getContext();
+        assert context != null;
+        String authority = context.getString(R.string.authority);
+        String mapId = context.getString(R.string.world_identifier);
         uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-        uriMatcher.addURI(AUTHORITY, "*/#/#/#", 1);
-        DatabaseHelper databaseHelper = new DatabaseHelper(getContext());
+        uriMatcher.addURI(authority, "maps", 1);
+        uriMatcher.addURI(authority, "tiles/" + mapId + "/#/#/#", 2);
+        DatabaseHelper databaseHelper = new DatabaseHelper(context);
         db = databaseHelper.getReadableDatabase(); // DB is closed automagically when content provider is destroyed
         return true;
     }
@@ -54,19 +58,63 @@ public class WorldOfflineMapProvider extends ContentProvider {
         if (uriMatcher.match(uri) < 0)
             throw new IllegalArgumentException("Unknown URI " + uri);
 
-        return TILE_TYPE;
+        return null;
     }
 
     @Override
     public Cursor query(@NonNull Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-        if (uriMatcher.match(uri) < 0)
+        int code = uriMatcher.match(uri);
+        if (code < 0)
             throw new IllegalArgumentException("Unknown URI " + uri);
 
+        switch (code) {
+            case 1:
+                return queryMaps(projection);
+            case 2:
+                return queryTiles(uri, projection);
+        }
+        return null;
+    }
+
+    private Cursor queryMaps(String[] projection) {
+        Context context = getContext();
+        assert context != null;
+        Resources resources = context.getResources();
+        MatrixCursor cursor = new MatrixCursor(projection);
+        MatrixCursor.RowBuilder row = cursor.newRow();
+        for (String column : projection) {
+            switch (column) {
+                case "IDENTIFIER":
+                    String id = context.getString(R.string.world_identifier);
+                    row.add(id);
+                    break;
+                case "NAME":
+                    String name = context.getString(R.string.world_name);
+                    row.add(name);
+                    break;
+                case "LICENSE":
+                    String license = context.getString(R.string.world_license);
+                    row.add(license);
+                    break;
+                case "MIN_ZOOM":
+                    int minZoom = resources.getInteger(R.integer.world_minzoom);
+                    row.add(minZoom);
+                    break;
+                case "MAX_ZOOM":
+                    int maxZoom = resources.getInteger(R.integer.world_maxzoom);
+                    row.add(maxZoom);
+                    break;
+            }
+        }
+        return cursor;
+    }
+
+    private Cursor queryTiles(@NonNull Uri uri, String[] projection) {
         List<String> pathSegments = uri.getPathSegments();
-        // String path = pathSegments.get(0);
-        String z = pathSegments.get(1);
-        String x = pathSegments.get(2);
-        String y = pathSegments.get(3);
+        // String mapId = pathSegments.get(1);
+        String z = pathSegments.get(2);
+        String x = pathSegments.get(3);
+        String y = pathSegments.get(4);
 
         // This particular map uses TMS addressing scheme so we have to invert Y axis
         int zoom = Integer.parseInt(z);

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="cbsec_minzoom">4</integer>
-    <integer name="cbsec_maxzoom">13</integer>
-    <integer name="cbtac_minzoom">4</integer>
-    <integer name="cbtac_maxzoom">14</integer>
-    <integer name="cbwac_minzoom">4</integer>
-    <integer name="cbwac_maxzoom">12</integer>
-    <integer name="cbenrl_minzoom">4</integer>
-    <integer name="cbenrl_maxzoom">13</integer>
-    <integer name="cbenrh_minzoom">4</integer>
-    <integer name="cbenrh_maxzoom">12</integer>
-    <integer name="cbenra_minzoom">4</integer>
-    <integer name="cbenra_maxzoom">13</integer>
+    <integer name="sec_minzoom">4</integer>
+    <integer name="sec_maxzoom">13</integer>
+    <integer name="tac_minzoom">4</integer>
+    <integer name="tac_maxzoom">14</integer>
+    <integer name="wac_minzoom">4</integer>
+    <integer name="wac_maxzoom">12</integer>
+    <integer name="enrl_minzoom">4</integer>
+    <integer name="enrl_maxzoom">13</integer>
+    <integer name="enrh_minzoom">4</integer>
+    <integer name="enrh_maxzoom">12</integer>
+    <integer name="enra_minzoom">4</integer>
+    <integer name="enra_maxzoom">13</integer>
 </resources>

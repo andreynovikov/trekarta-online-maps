@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">World Map for Trekarta</string>
     <string name="world_name">World Map</string>
-    <string name="world_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.offline.provider.worldmap/world]]></string>
+    <string name="authority" translatable="false">mobi.maptrek.maps.offline.provider.worldmap</string>
+    <string name="world_identifier" translatable="false">mobi.maptrek.maps.offline.worldmap</string>
     <string name="world_license" translatable="false"><![CDATA[CC BY 3.0 US]]></string>
 </resources>

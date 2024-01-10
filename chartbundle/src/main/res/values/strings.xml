@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Chartbundle US AeroNav Online Charts for Trekarta</string>
-    <string name="cbsec_name">Sectional Charts</string>
-    <string name="cbsec_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.chartbundle/sec]]></string>
-    <string name="cbtac_name">Terminal Area Charts</string>
-    <string name="cbtac_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.chartbundle/tac]]></string>
-    <string name="cbwac_name">World Aeronautical Charts</string>
-    <string name="cbwac_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.chartbundle/wac]]></string>
-    <string name="cbenrl_name">Enroute Low Charts</string>
-    <string name="cbenrl_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.chartbundle/enrl]]></string>
-    <string name="cbenrh_name">Enroute High Charts</string>
-    <string name="cbenrh_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.chartbundle/enrh]]></string>
-    <string name="cbenra_name">Area Charts</string>
-    <string name="cbenra_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.chartbundle/enra]]></string>
+    <string name="sec_name">Sectional Charts</string>
+    <string name="tac_name">Terminal Area Charts</string>
+    <string name="wac_name">World Aeronautical Charts</string>
+    <string name="enrl_name">Enroute Low Charts</string>
+    <string name="enrh_name">Enroute High Charts</string>
+    <string name="enra_name">Area Charts</string>
+    <string name="authority">mobi.maptrek.maps.online.provider.chartbundle</string>
 </resources>

@@ -2,17 +2,16 @@ apply plugin: 'com.android.application'
 
 android {
     defaultConfig {
-        applicationId "mobi.maptrek.map.online.provider.chartbundle"
+        applicationId "mobi.maptrek.maps.online.provider.chartbundle"
         minSdkVersion 23
         targetSdkVersion 34
         compileSdk 34
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2.0"
     }
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     namespace 'mobi.maptrek.maps.online.provider.chartbundle'

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="maps" translatable="false">
-        <item>peruskartta</item>
-        <item>taustakartta</item>
-        <item>ortokuva</item>
-    </string-array>
-</resources>

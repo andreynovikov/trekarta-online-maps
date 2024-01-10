@@ -2,12 +2,8 @@
 <resources>
     <string name="app_name">Basemap.at Online Maps for Trekarta</string>
     <string name="geolandbasemap_name">Basemap.at Standard</string>
-    <string name="geolandbasemap_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.basemapat/geolandbasemap]]></string>
-    <string name="geolandbasemap_license" translatable="false"><![CDATA[Data source: <a href="http://www.basemap.at/">www.basemap.at</a>]]></string>
     <string name="bmapgrau_name">Basemap.at Grau</string>
-    <string name="bmapgrau_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.basemapat/bmapgrau]]></string>
-    <string name="bmapgrau_license" translatable="false"><![CDATA[Data source: <a href="http://www.basemap.at/">www.basemap.at</a>]]></string>
-    <string name="bmaporthofoto_name">Basemap.at Orthophoto</string>
-    <string name="bmaporthofoto_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.basemapat/bmaporthofoto30cm]]></string>
-    <string name="bmaporthofoto_license" translatable="false"><![CDATA[Data source: <a href="http://www.basemap.at/">www.basemap.at</a>]]></string>
+    <string name="bmaporthofoto30cm_name">Basemap.at Orthophoto</string>
+    <string name="license" translatable="false"><![CDATA[Data source: <a href="http://www.basemap.at/">www.basemap.at</a>]]></string>
+    <string name="authority" translatable="false">mobi.maptrek.maps.online.provider.basemapat</string>
 </resources>

@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Thunderforest Online Maps for MapTrek</string>
-    <string name="thunderforestcycle_name">Thunderforest OpenCycleMap</string>
-    <string name="thunderforestcycle_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.thunderforest/cycle]]></string>
-    <string name="thunderforestcycle_license" translatable="false"><![CDATA[Maps &#169; <a href="http://www.thunderforest.com/terms/">Thunderforest</a>, Data &#169; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors]]></string>
-    <string name="thunderforestlandscape_name">Thunderforest Lanscape</string>
-    <string name="thunderforestlandscape_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.thunderforest/landscape]]></string>
-    <string name="thunderforestlandscape_license" translatable="false"><![CDATA[Maps &#169; <a href="http://www.thunderforest.com/terms/">Thunderforest</a>, Data &#169; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors]]></string>
-    <string name="thunderforesttransport_name">Thunderforest Transport</string>
-    <string name="thunderforesttransport_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.thunderforest/transport]]></string>
-    <string name="thunderforesttransport_license" translatable="false"><![CDATA[Maps &#169; <a href="http://www.thunderforest.com/terms/">Thunderforest</a>, Data &#169; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors]]></string>
-    <string name="thunderforestoutdoors_name">Thunderforest Outdoors</string>
-    <string name="thunderforestoutdoors_uri" translatable="false"><![CDATA[content://mobi.maptrek.maps.online.provider.thunderforest/outdoors]]></string>
-    <string name="thunderforestoutdoors_license" translatable="false"><![CDATA[Maps &#169; <a href="http://www.thunderforest.com/terms/">Thunderforest</a>, Data &#169; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors]]></string>
+    <string name="cycle_name">Thunderforest OpenCycleMap</string>
+    <string name="landscape_name">Thunderforest Lanscape</string>
+    <string name="transport_name">Thunderforest Transport</string>
+    <string name="outdoors_name">Thunderforest Outdoors</string>
+    <string name="license" translatable="false"><![CDATA[Maps &#169; <a href="http://www.thunderforest.com/terms/">Thunderforest</a>, Data &#169; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors]]></string>
+    <string name="authority" translatable="false">mobi.maptrek.maps.online.provider.thunderforest</string>
 </resources>
